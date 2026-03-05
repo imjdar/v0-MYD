@@ -1,23 +1,31 @@
-import { MessageCircle } from "lucide-react"
+import { Users, MessageCircle } from "lucide-react"
+
+const WHATSAPP_NUMBER = "593988939149"
+const WHATSAPP_MESSAGE = encodeURIComponent("!Hola! Quiero formar parte de la Feria como expositor/a.")
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`
 
 export function ExpositorCTA() {
   return (
-    <section className="bg-primary py-10">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 text-center md:flex-row md:text-left">
-        <MessageCircle className="h-10 w-10 shrink-0 text-primary-foreground/80" />
-        <div className="flex-1">
-          <p className="text-sm font-bold uppercase tracking-wide text-primary-foreground md:text-base">
-            {"¿ERES EXPOSITOR O REPRESENTANTE DE UNA MARCA DE MUEBLES O DECORACIÓN EN EL PAÍS?"}
+    <section className="relative overflow-hidden bg-gradient-to-r from-[#c47a5a]/80 to-[#8b8b8b]/60 py-14">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 px-6 md:flex-row">
+        <div className="shrink-0">
+          <Users className="h-16 w-16 text-primary/80" strokeWidth={1.5} />
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <p className="text-sm font-bold uppercase leading-snug tracking-wide text-foreground md:text-base">
+            {"ERES EXPOSITOR O REPRESENTANTE DE UNA MARCA DE MUEBLES O DECORACION EN EL PAIS?"}
           </p>
-          <p className="mt-1 text-xs text-primary-foreground/80 md:text-sm">
-            {"SI TE INTERESA PARTICIPAR EN LA FERIA, NO DUDES EN DEJARNOS UN MENSAJE. ¡NOS ENCANTARÍA CONTAR CONTIGO!"}
+          <p className="mt-2 text-sm font-bold uppercase text-foreground/80">
+            {"SI TE INTERESA PARTICIPAR EN LA FERIA, NO DUDES EN DEJARNOS UN MENSAJE. !NOS ENCANTARIA CONTAR CONTIGO!"}
           </p>
         </div>
         <a
-          href="#contactanos"
-          className="inline-flex items-center gap-2 rounded border-2 border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-foreground/20"
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-[#25D366] px-6 py-3 text-sm font-bold text-primary-foreground transition-transform hover:scale-105"
         >
-          CONTÁCTANOS
+          CONTACTANOS
           <MessageCircle className="h-4 w-4" />
         </a>
       </div>

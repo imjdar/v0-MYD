@@ -1,4 +1,6 @@
-import { MapPin, Phone, Instagram } from "lucide-react"
+import { MapPin, Phone, Instagram, ExternalLink } from "lucide-react"
+
+const MAPS_URL = "https://www.google.com/maps/place/Centro+de+Exposiciones+Quito/@-0.18,-78.48,17z"
 
 export function Footer() {
   return (
@@ -35,22 +37,35 @@ export function Footer() {
               <a href="#quienes-somos" className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground">
                 Quienes Somos
               </a>
+              <a href="#entradas" className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground">
+                Entradas
+              </a>
               <a href="#contactanos" className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground">
                 Contactanos
               </a>
             </nav>
           </div>
 
-          {/* Direccion - now includes all contact info */}
+          {/* Direccion - includes all contact info + maps link */}
           <div>
             <h3 className="text-sm font-bold text-accent">Direccion</h3>
             <div className="mt-4 flex flex-col gap-3">
-              <div className="flex items-start gap-2.5">
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-2.5 transition-colors"
+              >
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div>
-                  <p className="text-sm text-primary-foreground/60">Av. Amazonas N34-332 y Av. Atahualpa</p>
+                  <p className="text-sm text-primary-foreground/60 group-hover:text-primary-foreground">
+                    Av. Amazonas N34-332 y Av. Atahualpa
+                  </p>
+                  <p className="mt-0.5 flex items-center gap-1 text-xs text-accent">
+                    Ver en Google Maps <ExternalLink className="h-3 w-3" />
+                  </p>
                 </div>
-              </div>
+              </a>
               <div className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div className="flex flex-col gap-0.5">
@@ -58,10 +73,15 @@ export function Footer() {
                   <p className="text-sm text-primary-foreground/60">099 893 8002</p>
                 </div>
               </div>
-              <div className="flex items-start gap-2.5">
+              <a
+                href="https://www.instagram.com/muebleydecoracion"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2.5 transition-colors"
+              >
                 <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <p className="text-sm text-primary-foreground/60">@muebleydecoracion</p>
-              </div>
+                <p className="text-sm text-primary-foreground/60 hover:text-primary-foreground">@muebleydecoracion</p>
+              </a>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-const TARGET_DATE = new Date("2025-11-07T00:00:00").getTime()
+const TARGET_DATE = new Date("2026-04-03T00:00:00").getTime()
 
 function getTimeLeft() {
   const now = Date.now()
@@ -29,7 +29,7 @@ export function CountdownSection() {
   }, [])
 
   const units = [
-    { value: time.days, label: "DÍAS" },
+    { value: time.days, label: "DIAS" },
     { value: time.hours, label: "HORAS" },
     { value: time.minutes, label: "MINUTOS" },
     { value: time.seconds, label: "SEGUNDOS" },
@@ -40,13 +40,14 @@ export function CountdownSection() {
       <div className="mx-auto max-w-2xl px-6 text-center">
         <div className="rounded-2xl border border-border bg-card p-8 shadow-lg">
           <h3 className="text-lg font-bold text-foreground md:text-xl">
-            {"Feria Mueble y Decoración — 5ta Edición"}
+            {"Feria Mueble y Decoracion -- 5ta Edicion"}
           </h3>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Te esperamos desde el <span className="font-bold text-foreground">7 de noviembre de 2025</span>
+          <p className="mt-2 text-sm text-primary">
+            Del <span className="font-bold text-foreground">03 de abril</span> al{" "}
+            <span className="font-bold text-foreground">19 de abril de 2026</span>
           </p>
           <p className="text-xs text-muted-foreground">Centro de Exposiciones Quito</p>
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-6 flex items-center justify-center gap-4 md:gap-6">
             {units.map((u) => (
               <div key={u.label} className="flex flex-col items-center">
                 <span className="text-4xl font-bold text-foreground md:text-5xl">
