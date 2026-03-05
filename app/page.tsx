@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/navbar"
-import { InfoBar } from "@/components/info-bar"
 import { HeroSection } from "@/components/hero-section"
 import { BrandsSection } from "@/components/brands-section"
 import { EditionSection } from "@/components/edition-section"
@@ -19,7 +18,6 @@ export default function HomePage() {
   return (
     <main>
       <Navbar />
-      <InfoBar />
       <HeroSection />
       <BrandsSection />
       <EditionSection />
