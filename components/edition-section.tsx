@@ -39,7 +39,7 @@ export function EditionSection() {
         <div className="relative flex-1 reveal reveal-right">
           <div className="relative overflow-hidden rounded-3xl shadow-2xl">
             <Image
-              src="/images/edition-event.jpg"
+              src="/images/fondo_2.jpg"
               alt="Inauguración de la VI Edición de la Feria Mueble y Decoración"
               width={600}
               height={400}

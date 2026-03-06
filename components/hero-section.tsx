@@ -1,6 +1,6 @@
 "use client"
 
-import { HERO_VIDEO_URL } from "@/lib/config"
+import { HERO_VIDEO_URL, HERO_BACKGROUND_URL } from "@/lib/config"
 
 export function HeroSection() {
   return (
@@ -34,8 +34,6 @@ export function HeroSection() {
               type="video/mp4"
             />
           </video>
-          {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-foreground to-transparent pointer-events-none" />
         </div>
 
         {/* Scroll indicator */}
@@ -51,7 +49,7 @@ export function HeroSection() {
       <section
         className="relative overflow-hidden bg-foreground py-16 sm:py-24 md:py-32"
         style={{
-          backgroundImage: "url('/images/hero-feria.jpg')",
+          backgroundImage: `url('${HERO_BACKGROUND_URL}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

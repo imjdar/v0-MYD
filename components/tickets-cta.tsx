@@ -11,7 +11,7 @@ export function TicketsCTA() {
       <div className="absolute inset-0 opacity-20">
         <div
           className="h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/edition-event.jpg')" }}
+          style={{ backgroundImage: "url('/images/fondo_2.jpg')" }}
         />
       </div>
       {/* Radial gradient overlay */}

@@ -36,6 +36,7 @@ export const PHONE_2 = process.env.NEXT_PUBLIC_PHONE_2 ?? ""
 
 // ─── Media ─────────────────────────────────────────────────────
 export const HERO_VIDEO_URL = process.env.NEXT_PUBLIC_HERO_VIDEO_URL ?? ""
+export const HERO_BACKGROUND_URL = process.env.NEXT_PUBLIC_HERO_BACKGROUND_URL ?? "/images/fondo_1.jpg"
 
 // ─── Event ─────────────────────────────────────────────────────
 export const EVENT_START = process.env.NEXT_PUBLIC_EVENT_START ?? "2026-04-03"
