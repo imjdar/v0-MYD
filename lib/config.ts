@@ -11,10 +11,9 @@
 const required = (key: string): string => {
     const value = process.env[key]
     if (!value) {
-        // In production, throw hard. In dev, warn so the dev server still starts.
-        if (process.env.NODE_ENV === "production") {
-            throw new Error(`Missing required environment variable: ${key}`)
-        }
+        // En Vercel a veces las variables de entorno tardan en inyectarse en el cliente,
+        // tirar un error hard rompe toda la React app (Application Error).
+        // Hacemos un fallback silencioso para evitar fallos catastróficos.
         console.warn(`[config] Missing env var: ${key}`)
         return ""
     }
