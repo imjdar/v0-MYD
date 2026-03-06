@@ -182,9 +182,15 @@ export function PopupForm() {
         Swal.fire({
           icon: "success",
           title: "¡Registro Exitoso!",
-          text: "Tu pase de cortesía ha sido generado. Por favor, revisa tu correo electrónico.",
+          text: "Tu pase de cortesía ha sido generado. Por favor, revisa tu correo electrónico (si no lo visualizas, revisa tu carpeta de Spam).",
           confirmButtonColor: COLOR_SUCCESS,
           confirmButtonText: "¡Genial! 🎉",
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          didOpen: () => {
+            Swal.disableButtons()
+            setTimeout(() => Swal.enableButtons(), 2000)
+          }
         }).then(() => setOpen(false))
 
       } else if (result.status === "error") {
@@ -192,9 +198,15 @@ export function PopupForm() {
         Swal.fire({
           icon: "info",
           title: "¡Registro guardado!",
-          text: "Tus datos fueron registrados. El correo de confirmación puede tardar unos minutos en llegar.",
+          text: "Tus datos fueron registrados. El correo de confirmación puede tardar unos minutos en llegar (recuerda revisar también tu carpeta de Spam).",
           confirmButtonColor: COLOR_PRIMARY,
           confirmButtonText: "Entendido",
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          didOpen: () => {
+            Swal.disableButtons()
+            setTimeout(() => Swal.enableButtons(), 2000)
+          }
         }).then(() => setOpen(false))
 
       } else {
