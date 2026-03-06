@@ -12,13 +12,11 @@ export function HeroSection() {
        */}
       <section id="inicio" className="relative bg-foreground overflow-hidden">
 
-        {/* Spacer for fixed navbar (64px) — only needed on desktop where video fills viewport */}
-        <div className="h-16 md:hidden" aria-hidden />
+        {/* Spacer for fixed navbar */}
+        <div className="h-[70px] md:h-[100px]" aria-hidden />
 
-        {/* Video wrapper:
-            Mobile  = natural height (no forced height → zero black space)
-            Desktop = full viewport minus navbar height, video covers it */}
-        <div className="relative w-full md:h-[calc(100vh-64px)] md:mt-16">
+        {/* Video wrapper */}
+        <div className="relative w-full md:h-[calc(100vh-100px)]">
           <video
             autoPlay
             loop

@@ -6,13 +6,13 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 const clients = [
   {
     image: "/images/MYD_IMG1.webp",
-    title: "Premios sorpresa solo por asistir",
-    description: "Con tu boleto participas por premios sorpresa de nuestros expositores.",
+    title: "Kits de Regalo para Expositores",
+    description: "Más de 15 Expositores referentes en Mueblería en el Ecuador.",
   },
   {
     image: "/images/MYD_IMG2.webp",
-    title: "Kits de Regalo para Expositores",
-    description: "Más de 15 Expositores referentes en Mueblería en el Ecuador.",
+    title: "Premios sorpresa solo por asistir",
+    description: "Con tu boleto participas por premios sorpresa de nuestros expositores.",
   },
 ]
 
