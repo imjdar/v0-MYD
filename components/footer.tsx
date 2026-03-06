@@ -1,6 +1,6 @@
-import { MapPin, Phone, Instagram, ExternalLink } from "lucide-react"
-
-const MAPS_URL = "https://www.google.com/maps/place/Centro+de+Exposiciones+Quito/@-0.18,-78.48,17z"
+import { Calendar, Clock, MapPin, Map, MessageCircle, Instagram, Phone, ExternalLink } from "lucide-react"
+import { WHATSAPP_URL, INSTAGRAM_URL, MAPS_URL, PHONE_1, PHONE_2, STUDIO_NAME } from "@/lib/config"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -13,19 +13,34 @@ export function Footer() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-foreground/40">
               CON EL AVAL DE
             </p>
-            <div className="mt-5 flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-primary-foreground/90 text-foreground">
-                <span className="text-[7px] font-bold leading-none">CEQ</span>
+            <div className="mt-5 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-24 items-center justify-center rounded-lg bg-white px-2 py-1.5">
+                  <Image
+                    src="/images/LOGO CEQ.png"
+                    alt="Centro de Exposiciones Quito"
+                    width={96}
+                    height={48}
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <span className="text-sm text-primary-foreground/70">Centro de Exposiciones Quito</span>
               </div>
-              <span className="text-sm text-primary-foreground/80">Centro de Exposiciones Quito</span>
-            </div>
-            <div className="mt-3 flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-primary-foreground/90 text-foreground">
-                <span className="text-[6px] font-bold leading-none">CAPEIPI</span>
+              <div className="flex items-center gap-3">
+                <div className="flex h-12 w-24 items-center justify-center rounded-lg bg-white px-2 py-1.5">
+                  <Image
+                    src="/images/logotipoCAPEIPI.jpg.jpeg"
+                    alt="CAPEIPI"
+                    width={96}
+                    height={48}
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <span className="text-sm text-primary-foreground/70">CAPEIPI</span>
               </div>
-              <span className="text-sm text-primary-foreground/80">CAPEIPI</span>
             </div>
           </div>
+
 
           {/* Menu */}
           <div>
@@ -40,8 +55,8 @@ export function Footer() {
               <a href="#entradas" className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground">
                 Entradas
               </a>
-              <a href="#contactanos" className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground">
-                Contactanos
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer noopener" aria-label="CONTÁCTANOS" className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground">
+                Contáctanos
               </a>
             </nav>
           </div>
@@ -69,12 +84,12 @@ export function Footer() {
               <div className="flex items-start gap-2.5">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div className="flex flex-col gap-0.5">
-                  <p className="text-sm text-primary-foreground/60">098 893 9148</p>
-                  <p className="text-sm text-primary-foreground/60">099 893 8002</p>
+                  <p className="text-sm text-primary-foreground/60">{PHONE_1}</p>
+                  <p className="text-sm text-primary-foreground/60">{PHONE_2}</p>
                 </div>
               </div>
               <a
-                href="https://www.instagram.com/muebleydecoracion"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2.5 transition-colors"
@@ -88,9 +103,12 @@ export function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-primary-foreground/10 px-6 py-5 text-center">
+      <div className="border-t border-primary-foreground/10 px-6 py-6 text-center space-y-1.5">
         <p className="text-xs text-primary-foreground/40">
-          {"© magnetostudio 2025. Quito, Ecuador. All Rights Reserved."}
+          © Feria Mueble y Decoración 2026. Quito, Ecuador. All Rights Reserved.
+        </p>
+        <p className="text-[11px] text-primary-foreground/25">
+          Estudio creativo {STUDIO_NAME}
         </p>
       </div>
     </footer>

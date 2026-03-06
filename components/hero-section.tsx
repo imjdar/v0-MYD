@@ -1,45 +1,113 @@
 "use client"
 
+import { HERO_VIDEO_URL } from "@/lib/config"
+
 export function HeroSection() {
   return (
-    <section id="inicio" className="relative overflow-hidden bg-foreground">
-      {/* Video background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover opacity-40"
-      >
-        <source
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MYD-NvYWYybCDBpX5GgKOwFYHW8Cz5wu1v.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div className="absolute inset-0 bg-foreground/50" />
-      <div className="relative z-10 mx-auto flex min-h-[520px] max-w-7xl flex-col justify-end px-6 pb-16 pt-24 md:min-h-[650px]">
-        <h1 className="font-serif text-4xl font-bold leading-tight text-primary-foreground md:text-6xl lg:text-7xl">
-          <span className="text-primary-foreground">FERIA MUEBLE Y</span>
-          <br />
-          <span className="text-accent">DECORACION</span>
-        </h1>
-        <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary-foreground/80 md:text-base">
-          Somos el punto de encuentro que reune a los mejores artesanos, disenadores y marcas del
-          pais, creando un espacio donde la tradicion, la innovacion y la elegancia se unen para
-          mostrar al mundo la grandeza del talento ecuatoriano.
-        </p>
-        <div className="mt-6">
-          <button
-            onClick={() => {
-              const event = new CustomEvent("open-form")
-              window.dispatchEvent(event)
-            }}
-            className="inline-block rounded bg-primary px-8 py-3 text-sm font-bold tracking-wide text-primary-foreground transition-transform hover:scale-105"
+    <>
+      {/* ─── 1. VIDEO HERO ──────────────────────────────────────────── */}
+      {/*
+       *  Mobile  → video al ancho completo con su aspecto natural (no crop, no espacio negro)
+       *  Desktop → ocupa toda la pantalla desde abajo del navbar con object-cover
+       */}
+      <section id="inicio" className="relative bg-foreground overflow-hidden">
+
+        {/* Spacer for fixed navbar (64px) — only needed on desktop where video fills viewport */}
+        <div className="h-16 md:hidden" aria-hidden />
+
+        {/* Video wrapper:
+            Mobile  = natural height (no forced height → zero black space)
+            Desktop = full viewport minus navbar height, video covers it */}
+        <div className="relative w-full md:h-[calc(100vh-64px)] md:mt-16">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            /* Mobile: contain inside natural ratio — no cropping, no black gap
+               Desktop: cover to fill the full viewport height */
+            className="w-full h-auto block object-contain md:absolute md:inset-0 md:h-full md:w-full md:object-cover"
           >
-            OBTENER ENTRADA
-          </button>
+            <source
+              src={HERO_VIDEO_URL}
+              type="video/mp4"
+            />
+          </video>
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-foreground to-transparent pointer-events-none" />
         </div>
-      </div>
-    </section>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 animate-bounce-down z-10">
+          <span className="text-[10px] font-semibold tracking-[0.25em] text-primary-foreground/70 uppercase">
+            Scroll
+          </span>
+          <div className="h-8 w-[1px] bg-gradient-to-b from-primary-foreground/50 to-transparent" />
+        </div>
+      </section>
+
+      {/* ─── 2. TEXTO con imagen de fondo ───────────────────────────── */}
+      <section
+        className="relative overflow-hidden bg-foreground py-16 sm:py-24 md:py-32"
+        style={{
+          backgroundImage: "url('/images/hero-feria.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-foreground/75" />
+        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 md:px-10">
+          <div className="max-w-2xl">
+            <p className="hero-animate text-[10px] sm:text-xs font-bold tracking-[0.3em] text-accent uppercase mb-4">
+              Feria Mueble y Decoración · VI Edición
+            </p>
+            <h1 className="hero-animate-delay-1 font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-primary-foreground">
+              <span className="block">FERIA</span>
+              <span className="block text-accent">MUEBLE Y</span>
+              <span className="block">DECORACION</span>
+            </h1>
+            <p className="hero-animate-delay-2 mt-5 max-w-xl text-sm sm:text-base leading-relaxed text-primary-foreground/80 md:text-lg">
+              Somos el punto de encuentro que reúne a los mejores artesanos, diseñadores y marcas del
+              país, creando un espacio donde la tradición, la innovación y la elegancia se unen para
+              mostrar al mundo la grandeza del talento ecuatoriano.
+            </p>
+            <div className="hero-animate-delay-3 mt-7 flex flex-wrap gap-3">
+              <button
+                onClick={() => {
+                  const event = new CustomEvent("open-form")
+                  window.dispatchEvent(event)
+                }}
+                className="shimmer-btn inline-block rounded-full bg-primary px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-widest text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
+              >
+                OBTENER ENTRADA
+              </button>
+              <a
+                href="#quienes-somos"
+                className="inline-block rounded-full border border-primary-foreground/30 px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-widest text-primary-foreground backdrop-blur-sm transition-all hover:bg-primary-foreground/10 hover:-translate-y-0.5"
+              >
+                CONOCER MÁS
+              </a>
+            </div>
+            <div className="hero-animate-delay-4 mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-6 text-primary-foreground/60">
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-bold text-primary-foreground">03 – 19</span>
+                <span className="text-[10px] sm:text-xs tracking-widest uppercase">Abril 2026</span>
+              </div>
+              <div className="h-8 w-[1px] bg-primary-foreground/20" />
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-bold text-primary-foreground">+15</span>
+                <span className="text-[10px] sm:text-xs tracking-widest uppercase">Expositores</span>
+              </div>
+              <div className="h-8 w-[1px] bg-primary-foreground/20" />
+              <div className="flex flex-col">
+                <span className="text-xl sm:text-2xl font-bold text-accent">VI</span>
+                <span className="text-[10px] sm:text-xs tracking-widest uppercase">Edición</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
