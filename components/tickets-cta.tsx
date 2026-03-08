@@ -26,9 +26,10 @@ export function TicketsCTA() {
             ¡ADQUIERE TUS<br />ENTRADAS YA!
           </h2>
           <p className="mt-5 max-w-lg text-base leading-relaxed text-primary-foreground/80">
-            Con tu entrada, no solo disfrutarás de una experiencia única con lo mejor en muebles y
-            decoración del país, sino que también participarás en sorteos en vivo con premios
-            durante todo el evento.
+            <strong>Entrada gratis hasta el 02 de abril del 2026.</strong> A partir del 03 de abril,
+            costo normal de entradas. Con tu entrada, no solo disfrutarás de una experiencia única con
+            lo mejor en muebles y decoración del país, sino que también participarás en sorteos en vivo
+            con premios durante todo el evento.
           </p>
           <div className="mt-5 flex flex-wrap gap-6">
             <div className="flex flex-col">
