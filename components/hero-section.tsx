@@ -68,7 +68,7 @@ export function HeroSection() {
             <h1 className="hero-animate-delay-1 font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-primary-foreground">
               <span className="block">FERIA</span>
               <span className="block text-accent">MUEBLE Y</span>
-              <span className="block">DECORACION</span>
+              <span className="block">DECORACIÓN</span>
             </h1>
             <p className="hero-animate-delay-2 mt-5 max-w-xl text-sm sm:text-base leading-relaxed text-primary-foreground/80 md:text-lg">
               Somos el punto de encuentro que reúne a los mejores artesanos, diseñadores y marcas del
