@@ -3,6 +3,12 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { HERO_VIDEO_URL } from "@/lib/config"
 
+/**
+ * @component VisionSection
+ * @description
+ * Showcases the fundamental vision of the event with text and an accompanying looping video.
+ * Configured with scroll reveal animations for better engagement.
+ */
 export function VisionSection() {
   const ref = useScrollReveal()
 
@@ -43,6 +49,7 @@ export function VisionSection() {
               loop
               muted
               playsInline
+              aria-label="Feria Mueble y Decoración Video Promocional"
               className="w-full h-auto object-contain max-h-[500px] block"
             >
               <source

@@ -12,6 +12,12 @@ const missionValues = [
   { icon: Link2, label: "Conexión", color: "from-violet-500/20 to-violet-500/5" },
 ]
 
+/**
+ * @component MissionSection
+ * @description
+ * Displays the mission, vision, and core values of the event using responsive grids and icons.
+ * Includes a direct WhatsApp call-to-action button.
+ */
 export function MissionSection() {
   const ref = useScrollReveal()
 

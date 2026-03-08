@@ -12,6 +12,13 @@ const navLinks = [
   { href: WHATSAPP_URL, label: "CONTÁCTANOS", external: true },
 ]
 
+/**
+ * @component Navbar
+ * @description
+ * Main sticky navigation bar for the application.
+ * Highlights the brand logo and allows jumping to internal sections via anchor links.
+ * Adjusts its background styling based on scroll position.
+ */
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)

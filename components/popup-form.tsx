@@ -88,6 +88,15 @@ function validate(form: FormState): Errors {
   return errors
 }
 
+/**
+ * @component PopupForm
+ * @description
+ * Displays a modal form for users to register and win a courtesy ticket.
+ * It opens automatically after 1.5 seconds or when the "open-form" custom event is dispatched.
+ * 
+ * @feature Date Cutoff: After April 2, 2026 at 23:59:59 (ECT), the form is disabled.
+ * Instead of opening, it redirects the user directly to WhatsApp.
+ */
 export function PopupForm() {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -102,12 +111,25 @@ export function PopupForm() {
   const isFormValid = Object.keys(errors).length === 0
 
   useEffect(() => {
-    const timer = setTimeout(() => setOpen(true), 1500)
+    const timer = setTimeout(() => {
+      // Cutoff date is April 2, 2026, 23:59:59 ECT (UTC-5) -> April 3, 2026, 04:59:59 UTC
+      const isAfterCutoff = Date.now() > new Date("2026-04-03T04:59:59Z").getTime()
+      if (!isAfterCutoff) {
+        setOpen(true)
+      }
+    }, 1500)
     return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
-    const handler = () => setOpen(true)
+    const handler = () => {
+      const isAfterCutoff = Date.now() > new Date("2026-04-03T04:59:59Z").getTime()
+      if (isAfterCutoff) {
+        window.open("https://wa.me/593988939149?text=estoy%20interesado%20en%20entradas%20del%20evento", "_blank")
+      } else {
+        setOpen(true)
+      }
+    }
     window.addEventListener("open-form", handler)
     return () => window.removeEventListener("open-form", handler)
   }, [])

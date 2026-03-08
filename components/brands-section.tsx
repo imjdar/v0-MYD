@@ -9,6 +9,12 @@ const brands = Array.from({ length: 13 }, (_, i) => ({
   logo: `/auspcianteMYD_${i + 1}.jpg`,
 }))
 
+/**
+ * @component BrandsSection
+ * @description
+ * Displays an infinite scrolling marquee of participating brand and sponsor logos.
+ * Uses a CSS animation and a tripled array to ensure seamless looping.
+ */
 export function BrandsSection() {
   // Triplicamos para que el bucle sea verdaderamente infinito sin saltos
   const tripled = [...brands, ...brands, ...brands]

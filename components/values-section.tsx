@@ -34,6 +34,12 @@ const values = [
   },
 ]
 
+/**
+ * @component ValuesSection
+ * @description
+ * Displays the core values characterizing the event in a responsive grid of cards.
+ * Each card features an icon, a large background number, and animated hover states.
+ */
 export function ValuesSection() {
   const ref = useScrollReveal()
 

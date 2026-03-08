@@ -4,6 +4,9 @@ import { useEffect, useState } from "react"
 
 const TARGET_DATE = new Date("2026-04-03T00:00:00").getTime()
 
+/**
+ * Calculates remaining time in days, hours, minutes, and seconds.
+ */
 function getTimeLeft() {
   const now = Date.now()
   const diff = TARGET_DATE - now
@@ -20,6 +23,12 @@ function pad(n: number) {
   return String(n).padStart(2, "0")
 }
 
+/**
+ * @component CountdownSection
+ * @description
+ * Displays a live countdown timer until the event start date (April 3, 2026).
+ * Safe against hydrated mismatches because the timer starts running client-side.
+ */
 export function CountdownSection() {
   // Initialize with zeros to avoid SSR/client hydration mismatch
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })

@@ -12,6 +12,12 @@ const features = [
   "Atención de Lunes a Domingo",
 ]
 
+/**
+ * @component FindSection
+ * @description
+ * Outlines the main attractions and experiences that visitors will find at the fair.
+ * Uses a dark theme with gold accents for a premium and elegant look.
+ */
 export function FindSection() {
   const ref = useScrollReveal()
 

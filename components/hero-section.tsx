@@ -2,6 +2,13 @@
 
 import { HERO_VIDEO_URL, HERO_BACKGROUND_URL } from "@/lib/config"
 
+/**
+ * @component HeroSection
+ * @description
+ * Renders the main above-the-fold content of the homepage.
+ * Features a full-width background video for mobile/desktop, scroll indicator,
+ * and a text overlay containing the title, description, event dates, and main CTAs.
+ */
 export function HeroSection() {
   return (
     <>
