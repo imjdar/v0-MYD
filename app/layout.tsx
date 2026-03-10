@@ -20,20 +20,27 @@ const playfair = Playfair_Display({
 
 /* ─── Canonical & shared constants ──────────────────────────────── */
 const SITE_URL = 'https://muebleydecoracion.com.ec'
-const SITE_TITLE = 'Feria Mueble y Decoración — VI Edición | Quito, Ecuador'
+const SITE_TITLE = 'Feria Mueble y Decoración 2026 | Centro de Exposiciones Quito'
 const SITE_DESC =
-  'La feria de muebles y decoración más reconocida de Ecuador. ' +
-  'Artesanos, diseñadores y más de 15 marcas elite reunidas en el ' +
-  'Centro de Exposiciones Quito, del 3 al 19 de abril de 2026.'
+  'La feria de muebles y decoración más importante del Ecuador. Encuentra diseño de interiores, artesanos y marcas élite para tu hogar en el Centro de Exposiciones Quito, del 3 al 19 de abril de 2026. Entrada de cortesía disponible.'
 
-/* ─── Structured data (Event schema) ────────────────────────────── */
+/* ─── Structured data (Event schema & Website Organization schema) ────────────────────────────── */
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Feria Mueble y Decoración Ecuador',
+  alternateName: ['Feria del Mueble Quito', 'Expo Muebles y Decoración', 'Feria Mueble y Decoración — VI Edición'],
+  url: SITE_URL,
+  description: SITE_DESC,
+}
+
 const eventSchema = {
   '@context': 'https://schema.org',
   '@type': 'Event',
-  name: 'Feria Mueble y Decoración — VI Edición',
+  name: 'Feria Mueble y Decoración — VI Edición 2026',
   description: SITE_DESC,
-  startDate: '2026-04-03',
-  endDate: '2026-04-19',
+  startDate: '2026-04-03T10:00:00-05:00',
+  endDate: '2026-04-19T20:00:00-05:00',
   eventStatus: 'https://schema.org/EventScheduled',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
   location: {
@@ -41,7 +48,10 @@ const eventSchema = {
     name: 'Centro de Exposiciones Quito',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: 'Av. Amazonas N34-332 y Atahualpa',
       addressLocality: 'Quito',
+      addressRegion: 'Pichincha',
+      postalCode: '170135',
       addressCountry: 'EC',
     },
   },
@@ -71,6 +81,15 @@ export const metadata: Metadata = {
     'diseño de interiores Quito',
     'CAPEIPI feria',
     'VI Edición feria mueble',
+    'comprar muebles Quito',
+    'decoración del hogar Ecuador',
+    'muebles de madera Quito',
+    'expo muebles Ecuador',
+    'tendencias en muebles 2026',
+    'decoración de salas modernas',
+    'juego de comedor Quito',
+    'feria del mueble cuenca',
+    'fábricas de muebles Quito'
   ],
   authors: [{ name: 'Growco 2026', url: 'https://growco2026.com' }],
   creator: 'Growco 2026',
@@ -160,7 +179,7 @@ export default function RootLayout({
           id="event-schema"
           type="application/ld+json"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, eventSchema]) }}
         />
       </body>
     </html>

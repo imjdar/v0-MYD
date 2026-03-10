@@ -1,26 +1,21 @@
 import { MetadataRoute } from 'next'
 
-const SITE_URL = 'https://muebleydecoracion.com.ec'
-
 export default function sitemap(): MetadataRoute.Sitemap {
+    const SITE_URL = 'https://muebleydecoracion.com.ec'
+
     return [
         {
             url: SITE_URL,
-            lastModified: new Date('2026-03-05'),
+            lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1.0,
         },
-        {
-            url: `${SITE_URL}/#quienes-somos`,
-            lastModified: new Date('2026-03-05'),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${SITE_URL}/#entradas`,
-            lastModified: new Date('2026-03-05'),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
+        // Si tuvieras más páginas en el futuro, las añadirías aquí:
+        // {
+        //   url: `${SITE_URL}/nosotros`,
+        //   lastModified: new Date(),
+        //   changeFrequency: 'monthly',
+        //   priority: 0.8,
+        // },
     ]
 }

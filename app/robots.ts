@@ -1,15 +1,13 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+    const SITE_URL = 'https://muebleydecoracion.com.ec'
+
     return {
-        rules: [
-            {
-                userAgent: '*',
-                allow: '/',
-                disallow: ['/api/', '/_next/'],
-            },
-        ],
-        sitemap: 'https://muebleydecoracion.com.ec/sitemap.xml',
-        host: 'https://muebleydecoracion.com.ec',
+        rules: {
+            userAgent: '*',
+            allow: '/',
+        },
+        sitemap: `${SITE_URL}/sitemap.xml`,
     }
 }
