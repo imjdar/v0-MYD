@@ -91,7 +91,7 @@ function validate(form: FormState): Errors {
 /**
  * @component PopupForm
  * @description
- * Displays a modal form for users to register and win a courtesy ticket.
+ * Displays a modal form for users to register and get a courtesy ticket.
  * It opens automatically after 1.5 seconds or when the "open-form" custom event is dispatched.
  * 
  * @feature Date Cutoff: After April 2, 2026 at 23:59:59 (ECT), the form is disabled.
@@ -278,9 +278,9 @@ export function PopupForm() {
             <X className="h-5 w-5" />
           </button>
           <h3 className="font-serif text-xl font-bold text-primary pr-8 md:text-2xl leading-snug">
-            ¡Gana una entrada de cortesía!
+            ¡Obtén tu entrada de cortesía!
           </h3>
-          <p className="mt-1 text-xs text-muted-foreground">Llena el formulario para participar</p>
+          <p className="mt-1 text-xs text-muted-foreground">Llena el formulario para obtenerla</p>
         </div>
 
         {/* Form — Swal handles all feedback, no custom success screen needed */}
@@ -518,7 +518,7 @@ export function PopupForm() {
             {loading ? (
               <><Loader2 className="h-4 w-4 animate-spin" /> Enviando...</>
             ) : isFormValid ? (
-              "ENVIAR Y PARTICIPAR 🎉"
+              "OBTENER ENTRADA 🎉"
             ) : (
               "COMPLETA EL FORMULARIO"
             )}
