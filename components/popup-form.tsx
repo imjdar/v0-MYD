@@ -8,7 +8,6 @@ import { GOOGLE_SCRIPT_URL, COLOR_SUCCESS } from "@/lib/config"
 type FormState = {
   nombres: string
   celular: string
-  ciudad: string
   correo: string
 }
 
@@ -22,7 +21,6 @@ function validate(form: FormState): Errors {
   } else if (!form.celular.startsWith("09")) {
     errors.celular = "El número debe empezar con 09"
   }
-  if (!form.ciudad.trim()) errors.ciudad = "¿Desde qué ciudad nos visitas?"
   if (!form.correo.trim()) {
     errors.correo = "Tu correo es necesario para enviarte la entrada"
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.correo)) {
@@ -37,7 +35,6 @@ export function PopupForm() {
   const [form, setForm] = useState<FormState>({
     nombres: "",
     celular: "",
-    ciudad: "",
     correo: "",
   })
 
@@ -72,14 +69,14 @@ export function PopupForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setTouched({ nombres: true, celular: true, ciudad: true, correo: true })
+    setTouched({ nombres: true, celular: true, correo: true })
     if (!isFormValid) return
 
     const payload = {
       nombres: form.nombres,
       celular: form.celular,
-      ciudad: form.ciudad,
       correo: form.correo,
+      ciudad: null,
       apellidos: null,
       cedula: null,
       aceptaPoliticas: true,
@@ -127,7 +124,7 @@ export function PopupForm() {
             Reserva tu lugar
           </h2>
           <p className="text-sm font-light tracking-wide text-muted-foreground">
-            Solo 4 datos — menos de 30 segundos
+            Solo 3 datos — menos de 30 segundos
           </p>
         </div>
 
@@ -164,23 +161,6 @@ export function PopupForm() {
             />
             {touched.celular && errors.celular && (
               <p className="mt-1 text-[10px] text-red-500 font-medium leading-tight">{errors.celular}</p>
-            )}
-          </div>
-
-          <div className="space-y-0.5">
-            <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Ciudad
-            </label>
-            <input
-              type="text"
-              placeholder="¿Desde dónde vienes?"
-              value={form.ciudad}
-              onChange={e => setForm({ ...form, ciudad: e.target.value })}
-              onBlur={() => setTouched({ ...touched, ciudad: true })}
-              className={inputStyles("ciudad")}
-            />
-            {touched.ciudad && errors.ciudad && (
-              <p className="mt-1 text-[10px] text-red-500 font-medium leading-tight">{errors.ciudad}</p>
             )}
           </div>
 
