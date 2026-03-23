@@ -6,18 +6,18 @@ const nextConfig = {
 
   // ─── Image optimization ───────────────────────────────────────────
   images: {
-    // Auto-serve WebP / AVIF with responsive srcSet
+    // Prioritizing AVIF followed by WebP for maximum compression
     formats: ['image/avif', 'image/webp'],
-    // Allow external video thumbnail domains
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
       },
     ],
-    // Device breakpoints for responsive images
+    // Optimized device sizes to reduce unnecessary generation
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    minimumCacheTTL: 31536000,
   },
 
   // ─── HTTP security + performance headers ─────────────────────────
@@ -33,8 +33,16 @@ const nextConfig = {
         ],
       },
       {
-        // Cache static assets aggressively
-        source: '/images/(.*)',
+        // Cache all static assets (images, fonts, icons) aggressively
+        // This ensures the browser keeps them for a year (immutable)
+        source: '/(images|fonts|icons)/(.*)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        // Specific rule for root assets moved to /images or remaining ones like favicon
+        source: '/(favicon.ico|apple-icon.png)',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],

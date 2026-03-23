@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 export function TicketsCTA() {
@@ -7,11 +8,14 @@ export function TicketsCTA() {
 
   return (
     <section id="entradas" className="relative overflow-hidden bg-foreground py-24" ref={ref}>
-      {/* Background image */}
+      {/* Background image optimized */}
       <div className="absolute inset-0 opacity-20">
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/fondo_2.jpg')" }}
+        <Image
+          src="/images/fondo_2.jpg"
+          alt="Fondo decorativo de la feria"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
         />
       </div>
       {/* Radial gradient overlay */}

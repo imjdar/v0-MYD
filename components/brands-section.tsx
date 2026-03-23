@@ -6,7 +6,7 @@ import Image from "next/image"
 // Usando las imágenes auspcianteMYD_1.jpg → auspcianteMYD_13.jpg
 const brands = Array.from({ length: 13 }, (_, i) => ({
   name: `Auspiciante ${i + 1}`,
-  logo: `/auspcianteMYD_${i + 1}.jpg`,
+  logo: `/images/auspcianteMYD_${i + 1}.jpg`,
 }))
 
 /**
@@ -47,6 +47,8 @@ export function BrandsSection() {
                 alt={brand.name}
                 width={120}
                 height={80}
+                // Optimización: Indicar al navegador que los logos son pequeños, evitando descargar versiones 1x/2x/3x gigantes
+                sizes="(max-width: 640px) 100px, 150px"
                 className="max-h-16 w-auto max-w-full object-contain transition-all duration-300 group-hover:scale-105"
               />
             </div>

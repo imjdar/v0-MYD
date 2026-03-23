@@ -49,6 +49,9 @@ export function VisionSection() {
               loop
               muted
               playsInline
+              // Optimización: Solo descargar metadatos y usar poster estático
+              preload="metadata"
+              poster="/images/vision-poster.jpg"
               aria-label="Feria Mueble y Decoración Video Promocional"
               className="w-full h-auto object-contain max-h-[500px] block"
             >

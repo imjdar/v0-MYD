@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { HERO_VIDEO_URL, HERO_BACKGROUND_URL } from "@/lib/config"
 
 /**
@@ -29,7 +30,9 @@ export function HeroSection() {
             loop
             muted
             playsInline
-            preload="auto"
+            // Optimización: Solo descargar metadatos inicialmente y usar poster estático
+            preload="metadata"
+            poster="/images/hero-feria.jpg"
             /* Mobile: contain inside natural ratio — no cropping, no black gap
                Desktop: cover to fill the full viewport height */
             className="w-full h-auto block object-contain md:absolute md:inset-0 md:h-full md:w-full md:object-cover"
@@ -50,16 +53,24 @@ export function HeroSection() {
         </div>
       </section>
 
-      {/* ─── 2. TEXTO con imagen de fondo ───────────────────────────── */}
-      <section
-        className="relative overflow-hidden bg-foreground py-16 sm:py-24 md:py-32"
-        style={{
-          backgroundImage: `url('${HERO_BACKGROUND_URL}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-foreground/75" />
+      {/* ─── 2. TEXTO con imagen de fondo optimizada ─────────────────── */}
+      <section className="relative overflow-hidden bg-foreground py-16 sm:py-24 md:py-32">
+        {/*
+         *  Optimización: Usamos next/image con 'fill' en lugar de backgroundImage.
+         *  Esto permite que Next.js detecte el tamaño de pantalla del usuario y sirva
+         *  una versión comprimida (AVIF/WebP) y redimensionada automáticamente.
+         */}
+        <Image
+          src={HERO_BACKGROUND_URL}
+          alt="Stand de Feria Mueble y Decoración"
+          fill
+          priority // Carga prioritaria al estar "above the fold"
+          quality={85}
+          className="object-cover object-center opacity-25"
+          sizes="100vw"
+        />
+
+        <div className="absolute inset-0 bg-foreground/50" />
         <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 md:px-10">
           <div className="max-w-2xl">
             <p className="hero-animate text-[10px] sm:text-xs font-bold tracking-[0.3em] text-accent uppercase mb-4">

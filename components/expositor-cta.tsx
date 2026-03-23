@@ -2,6 +2,7 @@
 
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { Users, MessageCircle } from "lucide-react"
+import Image from "next/image"
 import { EXPOSITOR_WHATSAPP_URL } from "@/lib/config"
 
 export function ExpositorCTA() {
@@ -15,13 +16,17 @@ export function ExpositorCTA() {
       }}
       ref={ref}
     >
-      {/* Subtle pattern */}
-      <div className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 50%, white 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Background image optimized */}
+      <div className="absolute inset-0 opacity-10">
+        <Image
+          src="/images/fondo_1.jpg"
+          alt="Fondo decorativo de exposición"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+          quality={85}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 md:flex-row md:gap-14">
         <div className="reveal-scale shrink-0">

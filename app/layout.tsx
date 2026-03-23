@@ -134,11 +134,11 @@ export const metadata: Metadata = {
   /* ── Icons ── */
   icons: {
     icon: [
-      { url: '/logo_MYD.jpg', type: 'image/jpeg' },
-      { url: '/logo_MYD.jpg', sizes: '192x192', type: 'image/jpeg' },
+      { url: '/images/logo_MYD.jpg', type: 'image/jpeg' },
+      { url: '/images/logo_MYD.jpg', sizes: '192x192', type: 'image/jpeg' },
     ],
-    apple: '/logo_MYD.jpg',
-    shortcut: '/logo_MYD.jpg',
+    apple: '/images/logo_MYD.jpg',
+    shortcut: '/images/logo_MYD.jpg',
   },
 }
 
@@ -157,14 +157,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        {/* Preload hero video for fastest LCP */}
-        <link
-          rel="preload"
-          as="video"
-          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MYD-NvYWYybCDBpX5GgKOwFYHW8Cz5wu1v.mp4"
-          type="video/mp4"
-        />
-        {/* Preload hero background image */}
+        {/* Preload hero background image — much lighter than video */}
         <link rel="preload" as="image" href="/images/hero-feria.jpg" />
         {/* DNS prefetch for external media / analytics */}
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" crossOrigin="anonymous" />

@@ -44,6 +44,7 @@ export function EditionSection() {
               width={600}
               height={400}
               className="h-auto w-full object-cover transition-transform duration-700 hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             {/* Badge */}
             <div className="absolute bottom-5 left-5 rounded-2xl bg-primary/90 px-5 py-3 backdrop-blur-sm">
