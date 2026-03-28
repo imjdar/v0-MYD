@@ -2,10 +2,9 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
 	"name": "my-project",
-	"compatibility_date": "2026-03-17",
+	"compatibility_date": "2024-11-18",
 	"compatibility_flags": [
-		"nodejs_compat",
-		"global_fetch_strictly_public"
+		"nodejs_compat"
 	],
 	"assets": {
 		"directory": ".open-next/assets",
@@ -29,18 +28,5 @@
     "NEXT_PUBLIC_EVENT_DATES": "03 – 19",
     "NEXT_PUBLIC_STUDIO_URL": "https://growco2026.com",
     "NEXT_PUBLIC_STUDIO_NAME": "Growco 2026"
-  },
-	"services": [
-		{
-			// Self-reference service binding, the service name must match the worker name
-			// see https://opennext.js.org/cloudflare/caching
-			"binding": "WORKER_SELF_REFERENCE",
-			"service": "my-project"
-		}
-	],
-	"images": {
-		// Enable image optimization
-		// see https://opennext.js.org/cloudflare/howtos/image
-		"binding": "IMAGES"
-	}
+  }
 }
