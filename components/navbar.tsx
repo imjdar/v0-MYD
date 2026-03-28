@@ -38,10 +38,10 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5">
         {/* Logo image */}
-        <a href="#inicio" className="flex items-center space-x-2 md:space-x-4 shrink-0 group">
+        <a href="#inicio" aria-label="Ir al inicio" className="flex items-center space-x-2 md:space-x-4 shrink-0 group">
           <div className="relative h-[64px] w-[64px] md:h-[80px] md:w-[80px] shrink-0 overflow-hidden rounded-xl transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/images/logo_v02.png"
+              src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653139/logo_v02_nfwjjm.png"
               alt="Feria Mueble y Decoración — VI Edición"
               fill
               className="object-contain"

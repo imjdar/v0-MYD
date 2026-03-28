@@ -11,7 +11,7 @@ export function TicketsCTA() {
       {/* Background image optimized */}
       <div className="absolute inset-0 opacity-20">
         <Image
-          src="/images/fondo_2.jpg"
+          src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_2_k5dp8s.png"
           alt="Fondo decorativo de la feria"
           fill
           className="object-cover object-center"

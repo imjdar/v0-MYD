@@ -19,7 +19,7 @@ export function ExpositorCTA() {
       {/* Background image optimized */}
       <div className="absolute inset-0 opacity-10">
         <Image
-          src="/images/fondo_1.jpg"
+          src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png"
           alt="Fondo decorativo de exposición"
           fill
           className="object-cover object-center"

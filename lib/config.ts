@@ -36,7 +36,7 @@ export const PHONE_2 = process.env.NEXT_PUBLIC_PHONE_2 ?? ""
 
 // ─── Media ─────────────────────────────────────────────────────
 export const HERO_VIDEO_URL = process.env.NEXT_PUBLIC_HERO_VIDEO_URL ?? ""
-export const HERO_BACKGROUND_URL = process.env.NEXT_PUBLIC_HERO_BACKGROUND_URL ?? "/images/fondo_1.jpg"
+export const HERO_BACKGROUND_URL = process.env.NEXT_PUBLIC_HERO_BACKGROUND_URL ?? "https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png"
 
 // ─── Event ─────────────────────────────────────────────────────
 export const EVENT_START = process.env.NEXT_PUBLIC_EVENT_START ?? "2026-04-03"

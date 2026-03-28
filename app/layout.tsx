@@ -60,7 +60,7 @@ const eventSchema = {
     name: 'Feria Mueble y Decoración',
     url: SITE_URL,
   },
-  image: `${SITE_URL}/images/hero-feria.jpg`,
+  image: `${SITE_URL}/images/fondo_1_ndiztn.png`, // Placeholder for schema if direct URL preferred or use Cloudinary
   url: SITE_URL,
 }
 
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     description: SITE_DESC,
     images: [
       {
-        url: '/images/hero-feria.jpg',
+        url: 'https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png',
         width: 1200,
         height: 630,
         alt: 'Feria Mueble y Decoración VI Edición — Quito 2026',
@@ -128,17 +128,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESC,
-    images: ['/images/hero-feria.jpg'],
+    images: ['https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png'],
   },
 
   /* ── Icons ── */
   icons: {
-    icon: [
-      { url: '/images/logo_MYD.jpg', type: 'image/jpeg' },
-      { url: '/images/logo_MYD.jpg', sizes: '192x192', type: 'image/jpeg' },
-    ],
-    apple: '/images/logo_MYD.jpg',
-    shortcut: '/images/logo_MYD.jpg',
+    icon: 'https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/logo_MYD_ljbgh7.png',
+    apple: 'https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/logo_MYD_ljbgh7.png',
   },
 }
 
@@ -158,7 +154,7 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <head>
         {/* Preload hero background image — much lighter than video */}
-        <link rel="preload" as="image" href="/images/hero-feria.jpg" />
+        <link rel="preload" as="image" href="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png" />
         {/* DNS prefetch for external media / analytics */}
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//va.vercel-scripts.com" />

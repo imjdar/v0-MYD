@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-const TARGET_DATE = new Date("2026-04-03T00:00:00").getTime()
+const TARGET_DATE = new Date("2026-04-03T00:00:00-05:00").getTime()
 
 /**
  * Calculates remaining time in days, hours, minutes, and seconds.

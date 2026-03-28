@@ -32,7 +32,6 @@ export function HeroSection() {
             playsInline
             // Optimización: Solo descargar metadatos inicialmente y usar poster estático
             preload="metadata"
-            poster="/images/hero-feria.jpg"
             /* Mobile: contain inside natural ratio — no cropping, no black gap
                Desktop: cover to fill the full viewport height */
             className="w-full h-auto block object-contain md:absolute md:inset-0 md:h-full md:w-full md:object-cover"

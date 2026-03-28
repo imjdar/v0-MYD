@@ -17,7 +17,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-24 items-center justify-center rounded-lg bg-white px-2 py-1.5">
                   <Image
-                    src="/images/LOGO CEQ.png"
+                    src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/LOGO_CEQ_ouku3h.png"
                     alt="Centro de Exposiciones Quito"
                     width={96}
                     height={48}
@@ -29,7 +29,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-24 items-center justify-center rounded-lg bg-white px-2 py-1.5">
                   <Image
-                    src="/images/logotipoCAPEIPI.jpg.jpeg"
+                    src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/logotipoCAPEIPI.jpg_dqidnv.jpg"
                     alt="CAPEIPI"
                     width={96}
                     height={48}
@@ -69,6 +69,7 @@ export function Footer() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Ver ubicación en Google Maps"
                 className="group flex items-start gap-2.5 transition-colors"
               >
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -92,6 +93,7 @@ export function Footer() {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Síguenos en Instagram"
                 className="flex items-start gap-2.5 transition-colors"
               >
                 <Instagram className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

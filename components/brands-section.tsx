@@ -4,10 +4,21 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import Image from "next/image"
 // Logos de marcas/auspiciantes participantes
 // Usando las imágenes auspcianteMYD_1.jpg → auspcianteMYD_13.jpg
-const brands = Array.from({ length: 13 }, (_, i) => ({
-  name: `Auspiciante ${i + 1}`,
-  logo: `/images/auspcianteMYD_${i + 1}.jpg`,
-}))
+const brands = [
+  { name: "Auspiciante 1", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_1_zrp5jz.png" },
+  { name: "Auspiciante 2", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_2_f3ai3n.png" },
+  { name: "Auspiciante 3", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_3_g7fdag.png" },
+  { name: "Auspiciante 4", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_4_yf6d1z.png" },
+  { name: "Auspiciante 5", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_5_ru8lo7.png" },
+  { name: "Auspiciante 6", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_6_mzavvd.png" },
+  { name: "Auspiciante 7", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_7_noy63m.png" },
+  { name: "Auspiciante 8", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_8_fji0k6.png" },
+  { name: "Auspiciante 9", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_9_qsini4.png" },
+  { name: "Auspiciante 10", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_10_mihaan.png" },
+  { name: "Auspiciante 11", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_11_l5ndg9.png" },
+  { name: "Auspiciante 12", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_12_mf9svv.png" },
+  { name: "Auspiciante 13", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_13_roavz1.png" },
+]
 
 /**
  * @component BrandsSection
