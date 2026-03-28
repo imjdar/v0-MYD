@@ -1,0 +1,46 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "myd",
+	"compatibility_date": "2026-03-17",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"observability": {
+    "enabled": true
+  },
+  "vars": {
+    "NEXT_PUBLIC_GOOGLE_SCRIPT_URL": "https://script.google.com/macros/s/AKfycbxZMpqAak8jBy1W_bRlmUg2pEjMnI4sjxTNT7MnrKolsPoPHMC2VqxY-i7A-UVt_dnJ/exec",
+    "NEXT_PUBLIC_SITE_URL": "https://muebleydecoracion.com.ec",
+    "NEXT_PUBLIC_WHATSAPP_URL": "https://wa.link/ycxpp3",
+    "NEXT_PUBLIC_EXPOSITOR_WHATSAPP_URL": "https://wa.link/o47nf0",
+    "NEXT_PUBLIC_INSTAGRAM_URL": "https://www.instagram.com/muebleydecoracion",
+    "NEXT_PUBLIC_MAPS_URL": "https://www.google.com/maps/place/Centro+de+Exposiciones+Quito/@-0.18,-78.48,17z",
+    "NEXT_PUBLIC_PHONE_1": "098 893 9148",
+    "NEXT_PUBLIC_PHONE_2": "099 893 8002",
+    "NEXT_PUBLIC_HERO_VIDEO_URL": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MYD-NvYWYybCDBpX5GgKOwFYHW8Cz5wu1v.mp4",
+    "NEXT_PUBLIC_EVENT_START": "2026-04-03",
+    "NEXT_PUBLIC_EVENT_END": "2026-04-19",
+    "NEXT_PUBLIC_EVENT_DATES": "03 – 19",
+    "NEXT_PUBLIC_STUDIO_URL": "https://growco2026.com",
+    "NEXT_PUBLIC_STUDIO_NAME": "Growco 2026"
+  },
+	"services": [
+		{
+			// Self-reference service binding, the service name must match the worker name
+			// see https://opennext.js.org/cloudflare/caching
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "myd"
+		}
+	],
+	"images": {
+		// Enable image optimization
+		// see https://opennext.js.org/cloudflare/howtos/image
+		"binding": "IMAGES"
+	}
+}
