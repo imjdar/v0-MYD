@@ -43,7 +43,7 @@ export function PopupForm() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const isAfterCutoff = Date.now() > new Date("2026-04-03T04:59:59Z").getTime()
+      const isAfterCutoff = Date.now() > new Date("2026-04-19T20:00:00-05:00").getTime()
       if (!isAfterCutoff) setOpen(true)
     }, 100)
     return () => clearTimeout(timer)
@@ -51,7 +51,7 @@ export function PopupForm() {
 
   useEffect(() => {
     const handler = () => {
-      const isAfterCutoff = Date.now() > new Date("2026-04-03T04:59:59Z").getTime()
+      const isAfterCutoff = Date.now() > new Date("2026-04-19T20:00:00-05:00").getTime()
       if (isAfterCutoff) {
         window.open("https://wa.me/593988939149?text=estoy%20interesado%20en%20entradas%20del%20evento", "_blank")
       } else {
