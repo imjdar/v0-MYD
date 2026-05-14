@@ -5,19 +5,19 @@ import Image from "next/image"
 // Logos de marcas/auspiciantes participantes
 // Usando las imágenes auspcianteMYD_1.jpg → auspcianteMYD_13.jpg
 const brands = [
-  { name: "Auspiciante 1", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_1_zrp5jz.png" },
-  { name: "Auspiciante 2", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_2_f3ai3n.png" },
-  { name: "Auspiciante 3", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_3_g7fdag.png" },
-  { name: "Auspiciante 4", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_4_yf6d1z.png" },
-  { name: "Auspiciante 5", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_5_ru8lo7.png" },
-  { name: "Auspiciante 6", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_6_mzavvd.png" },
-  { name: "Auspiciante 7", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_7_noy63m.png" },
-  { name: "Auspiciante 8", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_8_fji0k6.png" },
-  { name: "Auspiciante 9", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653129/auspcianteMYD_9_qsini4.png" },
-  { name: "Auspiciante 10", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_10_mihaan.png" },
-  { name: "Auspiciante 11", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_11_l5ndg9.png" },
-  { name: "Auspiciante 12", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_12_mf9svv.png" },
-  { name: "Auspiciante 13", logo: "https://res.cloudinary.com/dqouabt21/image/upload/v1774653128/auspcianteMYD_13_roavz1.png" },
+  { name: "Auspiciante 1", logo: "/images/auspcianteMYD_1.webp" },
+  { name: "Auspiciante 2", logo: "/images/auspcianteMYD_2.webp" },
+  { name: "Auspiciante 3", logo: "/images/auspcianteMYD_3.webp" },
+  { name: "Auspiciante 4", logo: "/images/auspcianteMYD_4.webp" },
+  { name: "Auspiciante 5", logo: "/images/auspcianteMYD_5.webp" },
+  { name: "Auspiciante 6", logo: "/images/auspcianteMYD_6.webp" },
+  { name: "Auspiciante 7", logo: "/images/auspcianteMYD_7.webp" },
+  { name: "Auspiciante 8", logo: "/images/auspcianteMYD_8.webp" },
+  { name: "Auspiciante 9", logo: "/images/auspcianteMYD_9.webp" },
+  { name: "Auspiciante 10", logo: "/images/auspcianteMYD_10.webp" },
+  { name: "Auspiciante 11", logo: "/images/auspcianteMYD_11.webp" },
+  { name: "Auspiciante 12", logo: "/images/auspcianteMYD_12.webp" },
+  { name: "Auspiciante 13", logo: "/images/auspcianteMYD_13.webp" },
 ]
 
 /**

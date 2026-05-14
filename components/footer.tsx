@@ -17,7 +17,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-24 items-center justify-center rounded-lg bg-white px-2 py-1.5">
                   <Image
-                    src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/LOGO_CEQ_ouku3h.png"
+                    src="/images/LOGO CEQ.png"
                     alt="Centro de Exposiciones Quito"
                     width={96}
                     height={48}
@@ -29,7 +29,7 @@ export function Footer() {
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-24 items-center justify-center rounded-lg bg-white px-2 py-1.5">
                   <Image
-                    src="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/logotipoCAPEIPI.jpg_dqidnv.jpg"
+                    src="/images/logotipoCAPEIPI.jpg.jpeg"
                     alt="CAPEIPI"
                     width={96}
                     height={48}

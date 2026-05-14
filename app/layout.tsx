@@ -60,7 +60,7 @@ const eventSchema = {
     name: 'Feria Mueble y Decoración',
     url: SITE_URL,
   },
-  image: `${SITE_URL}/images/fondo_1_ndiztn.png`, // Placeholder for schema if direct URL preferred or use Cloudinary
+  image: `${SITE_URL}/images/fondo_1.webp`, // Placeholder for schema if direct URL preferred or use Cloudinary
   url: SITE_URL,
 }
 
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     description: SITE_DESC,
     images: [
       {
-        url: 'https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png',
+        url: '/images/fondo_1.webp',
         width: 1200,
         height: 630,
         alt: 'Feria Mueble y Decoración VI Edición — Quito 2026',
@@ -128,13 +128,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESC,
-    images: ['https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png'],
+    images: ['/images/fondo_1.webp'],
   },
 
   /* ── Icons ── */
   icons: {
-    icon: 'https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/logo_MYD_ljbgh7.png',
-    apple: 'https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/logo_MYD_ljbgh7.png',
+    icon: '/images/logo_MYD.webp',
+    apple: '/images/logo_MYD.webp',
   },
 }
 
@@ -154,7 +154,7 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <head>
         {/* Preload hero background image — much lighter than video */}
-        <link rel="preload" as="image" href="https://res.cloudinary.com/dqouabt21/image/upload/v1774653136/fondo_1_ndiztn.png" />
+        <link rel="preload" as="image" href="/images/fondo_1.webp" />
         {/* DNS prefetch for external media / analytics */}
         <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//va.vercel-scripts.com" />
