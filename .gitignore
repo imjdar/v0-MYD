@@ -11,3 +11,4 @@ node_modules/
 .open-next/
 .wrangler/
 .dev.vars
+node_modules_old/

@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     // Prioritizing AVIF followed by WebP for maximum compression
     formats: ['image/avif', 'image/webp'],
-    qualities: [65, 80],
+    qualities: [65, 80, 85],
     remotePatterns: [
       {
         protocol: 'https',
